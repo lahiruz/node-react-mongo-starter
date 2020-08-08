@@ -13,21 +13,21 @@ module.exports.createEvent = async function(req, res) {
   });
 }
 
-// module.exports.updateProduct = async function(req, res) {
-//   const {id} = req.params;
-//   let product = await Product.findByIdAndUpdate(id, req.body);
+module.exports.updateEvent = async function(req, res) {
+  const {id} = req.params;
+  let event = await Event.findByIdAndUpdate(id, req.body);
 
-//   return res.status(202).send({
-//     error: false,
-//     product
-//   });
-// }
+  return res.status(202).send({
+    error: false,
+    event
+  });
+}
 
-// module.exports.deleteProduct = async function(req, res) {
-//   const {id} = req.params;
-//   let product = await Product.findByIdAndDelete(id);
-//   return res.status(202).send({
-//     error: false,
-//     product
-//   });
-// }
+module.exports.deleteEvent = async function(req, res) {
+  const {id} = req.params;
+  let event = await Event.findByIdAndDelete(id);
+  return res.status(202).send({
+    error: false,
+    event
+  });
+}

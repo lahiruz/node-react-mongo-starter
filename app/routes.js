@@ -13,8 +13,8 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
 app.get('/api/event', require('../controllers/eventHandler').getEvents);
 app.post('/api/event', require('../controllers/eventHandler').createEvent);
-// app.put('/api/product/:id', require('../controllers/eventHandler').updateProduct);
-// app.delete('/api/product/:id', require('../controllers/eventHandler').deleteProduct);
+app.put('/api/event/:id', require('../controllers/eventHandler').updateEvent);
+app.delete('/api/event/:id', require('../controllers/eventHandler').deleteEvent);
 
 app.use(express.static('client/build'));
 app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
