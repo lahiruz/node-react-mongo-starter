@@ -1,7 +1,5 @@
-require('dotenv').config();
 const app = require('./app/routes');
+const config =  require('./config');
+const { PORT } = config;
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`app running on port ${PORT}`)
-});
+app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));

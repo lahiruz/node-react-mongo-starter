@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const connectDB = require('./connection');
 const bodyParser = require('body-parser');
